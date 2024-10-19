@@ -11,9 +11,13 @@ if selecao_usuario:
         senha_input = st.text_input(label="",placeholder="Insira sua senha")
 if selecao_usuario and senha_input:
     if int(senha_input) == session.query(Usuario).filter(Usuario.nome == selecao_usuario).first().senha:
-        produto = st.text_input(label='',placeholder='Insira o produto desejado')
+        col3,col4 = st.columns(2)
+        with col3:
+            produto = st.text_input(label='',placeholder='Insira o produto desejado')
+        with col4:
+            audio_value
 
-        if produto:
+        if produto or audio:
                 col3,col4 = st.columns(2)
                 with col3:
                     analise = st.button("Analisar produtos")
