@@ -9,7 +9,13 @@ import pyttsx3
 tab1,tab2 = st.tabs(['Consulta',"Assistente"])
 
 with tab1:
-
+    ouvir = st.button('ouvir')
+    if ouvir:
+                engine = pyttsx3.init()
+                engine.setProperty("volume", 1) 
+                engine.setProperty("rate", 200)
+                engine.setProperty("voice", "brazil") 
+                engine.say("Olá")
     usuarios = [elemento.nome for elemento in session.query(Usuario).all()]
     temas = [item.tema for item in session.query(Pesquisa).all()]
     
@@ -40,10 +46,4 @@ with tab1:
                 texto = rec.recognize_google(audio,language ='pt-BR ')
             resposta = analisar(texto,str(pesquisas))
             bot.write(resposta)   
-            ouvir = st.button('ouvir')
-            if ouvir:
-                engine = pyttsx3.init()
-                engine.setProperty("volume", 1) 
-                engine.setProperty("rate", 200)
-                engine.setProperty("voice", "brazil") 
-                engine.say("Olá")
+
