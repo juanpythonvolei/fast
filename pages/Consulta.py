@@ -4,6 +4,7 @@ from analista import *
 from models import *
 from database import *
 import speech_recognition as sr 
+import pyttsx3
 
 tab1,tab2 = st.tabs(['Consulta',"Assistente"])
 
@@ -37,4 +38,12 @@ with tab1:
             with sr.AudioFile(audio_value) as arquivo_audio:
                 audio = rec.record(arquivo_audio)
                 texto = rec.recognize_google(audio,language ='pt-BR ')
-            bot.write(analisar(texto,str(pesquisas)))   
+            resposta = analisar(texto,str(pesquisas))
+            bot.write(resposta)   
+            ouvir = st.button('ouvir')
+            if ouvir:
+                engine = pyttsx3.init()
+                engine.setProperty("volume", 1) 
+                engine.setProperty("rate", 200)
+                engine.setProperty("voice", "brazil") 
+                engine.say("Olá")
