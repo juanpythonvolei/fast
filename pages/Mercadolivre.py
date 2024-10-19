@@ -13,10 +13,17 @@ if selecao_usuario:
         senha_input = st.text_input(label="",placeholder="Insira sua senha")
 if selecao_usuario and senha_input:
     if int(senha_input) == session.query(Usuario).filter(Usuario.nome == selecao_usuario).first().senha:
-        produto = st.text_input(label='',placeholder='Insira o produto desejado')
-
-        if produto:
-
+       col3,col4 = st.columns(2)
+        with col3:
+            produto = st.text_input(label='',placeholder='Insira o produto desejado')
+        with col4:
+            audio_value = st.experimental_audio_input("Faça sua pergunta")
+            if audio_value:
+                rec = sr.Recognizer()
+                with sr.AudioFile(audio_value) as arquivo_audio:
+                    audio = rec.record(arquivo_audio)
+                    produto = rec.recognize_google(audio,language ='pt-BR ')
+        if produto or audio_value:
             user = st.chat_message("user")
             user.write(produto)
             assistant = st.chat_message("assistant")
