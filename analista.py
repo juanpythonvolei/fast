@@ -80,7 +80,7 @@ def inciar_busca(produto):
 
     headers = {
         "x-rapidapi-key": st.secrets['x-rapidapi-key'],
-        "x-rapidapi-host": st.secrets['real-time-amazon-data.p.rapidapi.com']
+        "x-rapidapi-host": st.secrets['api_sub_key']
     }
     lista_respostas = []
     response = requests.get(url, headers=headers, params=querystring)
@@ -120,7 +120,7 @@ def buscar_produtos(lista_ass):
 
     headers = {
         "x-rapidapi-key":st.secrets['x-rapidapi-key'],
-        "x-rapidapi-host": st.secrets['real-time-amazon-data.p.rapidapi.com']
+        "x-rapidapi-host": st.secrets['api_sub_key']
     }
 
     response = requests.get(url, headers=headers, params=querystring)
