@@ -30,11 +30,11 @@ if selecao_usuario and senha_input:
                 with col3:
                     analise = st.button("Analisar produtos")
                 if analise:
-                        bot = st.chat_message('assistant')
                         with st.spinner('Buscando'):
                             resposta = avaliar_busca(inciar_busca(produto))
                         add_search(search=resposta['resposta'],user=selecao_usuario,theme=produto)
                         enviar_email("juanpablozonho@gmail.com",f"Pesquisa do Produto {produto}",resposta['resposta'])
+                        bot = st.chat_message('assistant')
                         bot.write(resposta['resposta'])
                         pop_over = st.popover(label="Faça o donwload do arquivo")
                         with pop_over:
@@ -49,9 +49,9 @@ if selecao_usuario and senha_input:
                 with col4:
                      busca = st.button("Pesquisar informações do produto")
                 if busca:
-                    bot = st.chat_message('assistant')
                     with st.spinner('Realizando busca'):
                           dict_resposta = interpretar_busca(buscar_produtos(inciar_busca(produto)))
+                    bot = st.chat_message('assistant')
                     bot.write(f'''
 {dict_resposta['sobre']}
 -------------------------
