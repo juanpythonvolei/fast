@@ -33,7 +33,7 @@ with tab1:
         audio_value = st.experimental_audio_input("Faça sua pergunta")
         if audio_value:
             rec = sr.Recognizer()
-            with sr.AudioFile('audio.wav') as arquivo_audio:
+            with sr.AudioFile(audio_value) as arquivo_audio:
                 audio = rec.record(arquivo_audio)
                 texto = rec.recognize_google(audio,language ='pt-BR ')
             st.info(analisar(texto,str(pesquisas)))   
