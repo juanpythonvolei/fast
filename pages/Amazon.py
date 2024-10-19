@@ -2,6 +2,10 @@ import requests
 from analisador import *
 from models import *
 from analista import *
+import speech_recognition as sr 
+
+
+
 usuarios = [elemento.nome for elemento in session.query(Usuario).all()]
 col1,col2 = st.columns(2)
 with col1:
@@ -15,9 +19,13 @@ if selecao_usuario and senha_input:
         with col3:
             produto = st.text_input(label='',placeholder='Insira o produto desejado')
         with col4:
-            audio_value
-
-        if produto or audio:
+            audio_value = st.experimental_audio_input("Faça sua pergunta")
+            if audio_value:
+                rec = sr.Recognizer()
+                with sr.AudioFile(audio_value) as arquivo_audio:
+                    audio = rec.record(arquivo_audio)
+                    produto = rec.recognize_google(audio,language ='pt-BR ')
+        if produto or audio_value:
                 col3,col4 = st.columns(2)
                 with col3:
                     analise = st.button("Analisar produtos")
