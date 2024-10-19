@@ -3,7 +3,7 @@ from analisador import *
 from models import *
 from analista import *
 import speech_recognition as sr 
-
+import pyttsx3
 
 
 usuarios = [elemento.nome for elemento in session.query(Usuario).all()]
