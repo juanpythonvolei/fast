@@ -9,7 +9,7 @@ import speech_recognition as sr
 usuarios = [elemento.nome for elemento in session.query(Usuario).all()]
 col1,col2 = st.columns(2)
 with col1:
-    selecao_usuario = st.selectbox(label="Selecione seu usuário",options=usuarios,index=None)
+    selecao_usuario = st.selectbox(label="",options=usuarios,index=None,placeholder='Selecione seu usuário')
 if selecao_usuario:
     with col2:
         senha_input = st.text_input(label="",placeholder="Insira sua senha")
