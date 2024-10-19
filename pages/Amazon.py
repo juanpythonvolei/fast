@@ -36,6 +36,13 @@ if selecao_usuario and senha_input:
                         enviar_email("juanpablozonho@gmail.com",f"Pesquisa do Produto {produto}",resposta['resposta'])
                         bot = st.chat_message('assistant')
                         bot.write(resposta['resposta'])
+                        ouvir = st.button('ouvir')
+                        if ouvir:
+                            engine = pyttsx3.init()
+                            engine.setProperty("volume", 1) 
+                            engine.setProperty("rate", 200)
+                            engine.setProperty("voice", "brazil") 
+                            engine.say("Olá")
                         pop_over = st.popover(label="Faça o donwload do arquivo")
                         with pop_over:
                             download = st.download_button(
