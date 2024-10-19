@@ -48,7 +48,6 @@ if toggle:
 else:
     novo_usuario = st.text_input(label="",placeholder="Insira seu novo usuário")
     nova_senha= st.text_input(label="",placeholder="Insira sua nova senha")
-    email = st.text_input(label="",placeholder="Insira um email válido")
     if novo_usuario and nova_senha:
         try:
             if int(nova_senha) == session.query(Usuario).filter(Usuario.nome == novo_usuario).first().senha:
