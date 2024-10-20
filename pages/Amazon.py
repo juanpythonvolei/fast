@@ -5,6 +5,7 @@ from analista import *
 import speech_recognition as sr 
 import pyttsx3
 
+st.image("https://download.logo.wine/logo/Amazon_(company)/Amazon_(company)-Logo.wine.png")
 
 usuarios = [elemento.nome for elemento in session.query(Usuario).all()]
 col1,col2 = st.columns(2)
