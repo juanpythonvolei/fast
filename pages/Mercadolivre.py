@@ -13,7 +13,7 @@ if selecao_usuario:
         senha_input = st.text_input(label="",placeholder="Insira sua senha")
 if selecao_usuario and senha_input:
     if int(senha_input) == session.query(Usuario).filter(Usuario.nome == selecao_usuario).first().senha:
-       col3,col4 = st.columns(2)
+        col3,col4 = st.columns(2)
         with col3:
             produto = st.text_input(label='',placeholder='Insira o produto desejado')
         with col4:
