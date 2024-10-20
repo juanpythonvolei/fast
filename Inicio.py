@@ -1,7 +1,7 @@
 import streamlit as st
 from models import *
 
-st.image('https://static.vecteezy.com/system/resources/previews/026/147/094/non_2x/vintage-magnifying-glass-chalk-sketch-on-blackboard-background-hand-drawn-illustration-retro-style-vector.jpg')
+st.image('https://th.bing.com/th/id/OIP.lMW44WnocetBfglXb96lzgHaHa?w=640&h=640&rs=1&pid=ImgDetMain')
 
 st.markdown("""
     <style>
