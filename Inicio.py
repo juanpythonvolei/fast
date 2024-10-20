@@ -38,7 +38,7 @@ css = """
 }
 </style>
 """
-toggle = st.toggle("Já tenha uma conta")
+toggle = st.toggle("Já tenho uma conta")
 
 if toggle:
     usuario = st.text_input(label="",placeholder="Insira seu usuário")
