@@ -1,7 +1,7 @@
 import streamlit as st
 from models import *
 
-st.image('https://intellectualpoint.com/wp-content/uploads/2020/02/AI_Logo.png')
+st.image(https://static.vecteezy.com/system/resources/previews/026/147/094/non_2x/vintage-magnifying-glass-chalk-sketch-on-blackboard-background-hand-drawn-illustration-retro-style-vector.jpg)
 
 st.markdown("""
     <style>
