@@ -1,6 +1,8 @@
 import streamlit as st
 from models import *
 
+st.image('https://intellectualpoint.com/wp-content/uploads/2020/02/AI_Logo.png')
+
 st.markdown("""
     <style>
     .sidebar .sidebar-content {
