@@ -24,3 +24,8 @@ def query_search(user,theme):
     searches = session.query(Pesquisa).filter(Pesquisa.usuario==user,Pesquisa.tema == theme).all()
     return [item.pesquisa for item in searches]
 
+def query_search_all(user):
+    searches = session.query(Pesquisa).filter(Pesquisa.usuario==user).all()
+    return [item.pesquisa for item in searches]
+
+
