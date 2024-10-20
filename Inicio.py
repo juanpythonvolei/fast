@@ -1,7 +1,7 @@
 import streamlit as st
 from models import *
 
-st.image('https://th.bing.com/th/id/OIP.lMW44WnocetBfglXb96lzgHaHa?w=640&h=640&rs=1&pid=ImgDetMain')
+st.image('https://miro.medium.com/v2/resize:fit:1200/1*8AlWn7eMF5To4ZBKfuGhiQ.jpeg')
 
 st.markdown("""
     <style>
