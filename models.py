@@ -26,6 +26,6 @@ def query_search(user,theme):
 
 def query_search_all(user):
     searches = session.query(Pesquisa).all()
-    return [item.pesquisa for item in searches]
+    return [f"{item.pesquisa}-{item.usuario}" for item in searches]
 
 
