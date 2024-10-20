@@ -4,6 +4,8 @@ from analista import *
 from models import *
 from database import *
 
+st.image("https://logodownload.org/wp-content/uploads/2016/08/mercado-livre-logo-7.png")
+
 usuarios = [elemento.nome for elemento in session.query(Usuario).all()]
 col1,col2 = st.columns(2)
 with col1:
