@@ -36,6 +36,6 @@ with tab1:
             with sr.AudioFile(audio_value) as arquivo_audio:
                 audio = rec.record(arquivo_audio)
                 texto = rec.recognize_google(audio,language ='pt-BR ')
-            resposta = analisar(texto,str(query_searches_all()))
+            resposta = analisar(texto,str(query_search_all()))
             bot.write(resposta)   
 
