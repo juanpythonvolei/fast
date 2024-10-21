@@ -56,8 +56,8 @@ else:
     nova_senha= st.text_input(label="Nova Senha",placeholder="Insira sua nova senha")
     if novo_usuario and nova_senha:
         try:
-            if int(nova_senha) == session.query(Usuario).filter(Usuario.nome == novo_usuario).first().senha:
-                st.error("Você não pode utlizar essa senha")
+            if novo_usuario == session.query(Usuario).filter(Usuario.nome == novo_usuario).first().nome:
+                st.error("Você não pode utlizar esse usuário")
         except:
             add_user(novo_usuario,nova_senha)
             st.switch_page("pages/Consulta.py")
