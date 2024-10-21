@@ -32,7 +32,7 @@ def delete_user(user):
     if usuario_existente:
         session.delete(usuario_existente)
         session.commit()
-        return f"Usuário {usuario_existente} deletado com sucesso"
+        return f"Usuário {usuario_existente.nome} deletado com sucesso"
     else:
         return f"Usuário {user} não existe"
     
@@ -44,7 +44,7 @@ def update_user(user,elemento,informação):
             session.commit()
         elif elemento == 'senha':
             usuario_existente.senha = informação
-        return f"Usuário {usuario_existente} Atualizado no item {elemento} com sucesso"
+        return f"Usuário {usuario_existente.nome} Atualizado no item {elemento} com sucesso"
     else:
         return f"Usuário {user} não existe"
 
