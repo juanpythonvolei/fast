@@ -6,7 +6,7 @@ session = sessionmaker(bind=engine)
 session = session()
 
 @st.dialog("Deseja realmente continuar")
-def confirmacao(function):
+def confirmar(function):
     confirmar = st.button('Confirmar')
     if confirmar:
         st.success(function)
