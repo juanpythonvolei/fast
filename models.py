@@ -27,5 +27,24 @@ def query_search(user,theme):
 def query_search_all():
     searches = session.query(Pesquisa).all()
     return [f"{item.pesquisa}-{item.usuario}" for item in searches]
-
+def delete_user(user):
+    usuario_existente = session.query(Usuario).filter(Usuario.nome == user).first()
+    if usuario_existente:
+        session.delete(usuario_existente)
+        session.commit()
+        return f"Usuário {usuario_existente} deletado com sucesso"
+    else:
+        return f"Usuário {user} não existe"
+    
+def update_user(user,elemento,informação):
+    usuario_existente = session.query(Usuario).filter(Usuario.nome == user).first()
+    if usuario_existente:
+        if elemento == 'nome': 
+            usuario_existente.nome = informação
+            session.commit()
+        elif elemento == 'senha':
+            usuario_existente.senha = informação
+        return f"Usuário {usuario_existente} Atualizado no item {elemento} com sucesso"
+    else:
+        return f"Usuário {user} não existe"
 
