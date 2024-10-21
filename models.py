@@ -9,7 +9,7 @@ session = session()
 def confirmacao(function):
     confirmar = st.button('Confirmar')
     if confirmar:
-        function
+        st.success(function)
 
 def add_user(name,password):
     new_user = Usuario(nome=name,senha=password)
