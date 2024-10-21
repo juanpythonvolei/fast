@@ -6,12 +6,12 @@ import streamlit as st
 
 senha = 4488
 
-admin_usuario = st.text_input(label='',placeholder='Insira o usuário administrador')
-senha_admin = st.text_input(label='',placeholder="Insira a senha do administrador")
+admin_usuario = st.text_input(label='Usuário',placeholder='Insira o usuário administrador')
+senha_admin = st.text_input(label='Senha',placeholder="Insira a senha do administrador")
 
 if admin_usuario and senha_admin:
     if admin_usuario == 'Juan' and int(senha_admin) == senha:
-        selecao = st.selectbox(label='',placeholder="Selecione uma opção",options=['Alterar Usuário','Alterar Senha','Excluir Usuário'],index=None)
+        selecao = st.selectbox(label='Seleção',placeholder="Selecione uma opção",options=['Alterar Usuário','Alterar Senha','Excluir Usuário'],index=None)
         if selecao == 'Alterar Usuário':
             usuario_atual = st.text_input(label="",placeholder="Insira seu usuário atual")
             novo_usuario= st.text_input(label="",placeholder="Insira seu novo usuário")
