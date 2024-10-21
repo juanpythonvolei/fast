@@ -44,13 +44,10 @@ if toggle:
     usuario = st.text_input(label="Usuário",placeholder="Insira seu usuário")
     senha= st.text_input(label="Senha",placeholder="Insira sua senha")
     if usuario and senha:
-        try:
             if int(senha) == session.query(Usuario).filter(Usuario.nome == usuario).first().senha:
                 st.switch_page("pages/Consulta.py")
             else:
                 st.error("Senha do usuário está incorreta")
-        except:
-            st.error("Esse usuário não existe")
 else:
     novo_usuario = st.text_input(label="Novo Usuário",placeholder="Insira seu novo usuário")
     nova_senha= st.text_input(label="Nova Senha",placeholder="Insira sua nova senha")
