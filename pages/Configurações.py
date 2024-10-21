@@ -18,7 +18,7 @@ if admin_usuario and senha_admin:
                 usuario_atual = st.text_input(label="",placeholder="Insira seu usuário atual")
                 novo_usuario= st.text_input(label="",placeholder="Insira seu novo usuário")
                 if usuario_atual and novo_usuario:
-                    st.info(update_user(usuario_atual,'nome',novo_usuario))
+                    confirmacao(update_user(usuario_atual,'nome',novo_usuario))
         elif selecao == 'Alterar Senha':
             alt_senha = st.popover('alterar')
             with alt_senha:
@@ -26,10 +26,10 @@ if admin_usuario and senha_admin:
                 senha_atual= st.text_input(label="",placeholder="Insira sua senha atual")
                 nova_senha= st.text_input(label="",placeholder="Insira sua nova senha")
                 if usuario_atual and senha_atual and nova_senha:
-                    st.info(update_user(usuario_atual,'senha',nova_senha))
+                    confirmacao(update_user(usuario_atual,'senha',nova_senha))
         elif selecao == 'Excluir Usuário':
             excl_usuario = st.popover('excluir')
             with excl_usuario:
                 usuario_atual = st.text_input("Selecione o usuário para a exclusão")
                 if usuario_atual:
-                    st.info(delete_user(usuario_atual))
+                    confirmacao(delete_user(usuario_atual))
