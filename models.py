@@ -1,8 +1,15 @@
 from database import *
 from sqlalchemy.orm import sessionmaker
+import streamlit as st
 
 session = sessionmaker(bind=engine)
 session = session()
+
+@st.dialog("Deseja realmente continuar")
+def confirmacao(function):
+    confirmar = st.button('Confirmar')
+    if confirmar:
+        function
 
 def add_user(name,password):
     new_user = Usuario(nome=name,senha=password)
