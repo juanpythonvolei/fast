@@ -50,13 +50,15 @@ if toggle:
                     st.switch_page("pages/Consulta.py")
                 else:
                     st.error("Senha do usuário está incorreta")
+            else:
+                st.error(f"Usuário {usuario} não existe")
 else:
     novo_usuario = st.text_input(label="Novo Usuário",placeholder="Insira seu novo usuário")
     nova_senha= st.text_input(label="Nova Senha",placeholder="Insira sua nova senha")
     if novo_usuario and nova_senha:
         try:
             if novo_usuario == session.query(Usuario).filter(Usuario.nome == novo_usuario).first().nome:
-                st.error("Você não pode utlizar esse usuário")
+                st.error(f"O usuário {novo_usuario} já existe. Utilize outro")
         except:
             add_user(novo_usuario,nova_senha)
             st.switch_page("pages/Consulta.py")
