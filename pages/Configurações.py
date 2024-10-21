@@ -9,7 +9,7 @@ senha = 4488
 admin_usuario = st.text_input(label='',placeholder='Insira o usuário administrador')
 senha_admin = st.text_input(label='',placeholder="Insira a senha do administrador")
 
-if admin_usuario == 'Juan' and senha_admin == senha:
+if admin_usuario == 'Juan' and int(senha_admin) == senha:
     selecao = st.selectbox(label='',placeholder="Selecione uma opção",options=['Alterar usuário','Alterar Senha','Excluir Usuário'])
     if selecao == 'Alterar Usuário':
         usuario_atual = st.text_input("Insira seu usuário atual")
