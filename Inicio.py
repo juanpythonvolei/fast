@@ -44,7 +44,7 @@ if toggle:
     usuario = st.text_input(label="Usuário",placeholder="Insira seu usuário")
     senha= st.text_input(label="Senha",placeholder="Insira sua senha")
     if usuario and senha:
-            verificar_usuario = session.query(Usuario).filter(Usuario.nome == usuario).firt()
+            verificar_usuario = session.query(Usuario).filter(Usuario.nome == usuario).first()
             if verificar_usuario:
                 if int(senha) == session.query(Usuario).filter(Usuario.nome == usuario).first().senha:
                     st.switch_page("pages/Consulta.py")
