@@ -33,6 +33,7 @@ if selecao_usuario and senha_input:
             with st.spinner('Wait for it...'):
                 result_function = pesquisar(produto)
                 add_search(user=selecao_usuario,theme=f"{produto}",search=result_function['resposta'])
+            enviar_email("juanpablozonho@gmail.com",f"Pesquisa do Produto {produto}",result_function['resposta'])    
             st.info("Respota obtida")    
             bot = st.chat_message("ai")
             bot.write(result_function['resposta'])
